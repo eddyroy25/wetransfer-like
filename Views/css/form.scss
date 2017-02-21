@@ -1,4 +1,24 @@
 .form{
+  display: block;
   margin-top: 100px ;
   margin-left: 100px;
+  border: 2px solid red;
+  border-radius: 12px;
+}
+
+#fichier{
+  margin: 10px;
+}
+
+#mail_dest{
+  margin: 15px;
+}
+
+#mail_exp{
+  margin: 15px;
+}
+
+#env{
+  margin-left: 170px;
+  margin-bottom: 10px;
 }
