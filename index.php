@@ -6,6 +6,9 @@ session_start();
 <html>
     <head>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="Views/css/style.css">
+
         <title>we transfer like</title>
     </head>
     <body>
