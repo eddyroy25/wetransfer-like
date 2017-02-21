@@ -19,18 +19,24 @@ session_start();
             <img src="Views/images/ostrich.png" alt="">
         </header>
         <div class="container">
-            <div>
-                <div>
+            <div class="row">
+                <div class="col-lg-offset-2 col-lg-6">
                     <main>
                         <form id="formulaire" enctype="multipart/form-data" class="form" action="Controller/script.php" method="post">
+
                             <input type="hidden" name="MAX_FILE_SIZE" value="300000000000" />
+
                             <input id="fichier" type="file" name="fichier" value="">
                             <span  id="fichier_err"> <?php echo $_SESSION["fichier_erreur"];?></span>
-                            <input id="mail_dest" type="text" name="mail_dest" value="">
+
+                            <input id="mail_dest" type="email" name="mail_dest" value="" placeholder="Email destinataire">
                             <span  id="mail_dest_err"> <?php echo $_SESSION["mail_dest_erreur"];?></span>
-                            <input id="mail_exp" type="text" name="mail_exp" value="">
+
+                            <input id="mail_exp" type="email" name="mail_exp" value="" placeholder="Mon Email">
                             <span  id="mail_exp_err"> <?php echo $_SESSION["mail_exp_erreur"];?></span>
-                            <input type="submit" name="envoyer" value="">
+
+                            <button id="env" type="submit" name="env">Envoyer</button>
+                            <!--                            <input type="submit" name="envoyer" value="">-->
                             <span  id="alerte"></span>
                         </form>
                     </main>
