@@ -13,7 +13,7 @@ session_start();
     </head>
     <body>
         <header>
-            <img src="" alt="">
+            <img src="Views/css/ostrich.svg" alt="">
         </header>
         <main>
             <form id="formulaire" enctype="multipart/form-data" class="form" action="Controller/script.php" method="post">
