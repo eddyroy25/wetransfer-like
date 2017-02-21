@@ -1,4 +1,4 @@
-<?php 
+<?php
 error_reporting(E_ALL & ~E_NOTICE);
 session_start();
 ?>
@@ -6,6 +6,9 @@ session_start();
 <html>
     <head>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="Views/css/style.css">
+
         <title>we transfer like</title>
     </head>
     <body>
@@ -26,8 +29,10 @@ session_start();
             </form>
         </main>
 <?php
-	session_unset(); 
-	session_destroy(); 
+	session_unset();
+	session_destroy();
 ?>
+        <script src="/view/js/main.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
     </body>
 </html>
