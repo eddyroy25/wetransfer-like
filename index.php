@@ -13,7 +13,7 @@ session_start();
     </head>
     <body>
         <header>
-            <img class ="logo" src="Views/images/ostrich.svg" alt="">
+            <img class ="logo" src="Views/images/ostrich.svg" alt="ostifly logo">
         </header>
         <main>
             <form id="formulaire" enctype="multipart/form-data" class="form" action="Controller/script.php" method="post">
@@ -33,6 +33,6 @@ session_start();
 	session_destroy();
 ?>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
-        <script src="/Views/js/main.js"></script>
+        <script src="Views/js/main.js"></script>
     </body>
 </html>
