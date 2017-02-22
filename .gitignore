@@ -2,4 +2,3 @@ PDO.php
 .ftpconfig
 .idea/
 vendor/*
-.sass-cache
