@@ -33,9 +33,11 @@ session_start();
                             <span  id="mail_exp_err"> <?php echo $_SESSION["mail_exp_erreur"];?></span>
 
                             <button id="env" type="submit" name="env">Envoyer</button>
-                            <!--                            <input type="submit" name="envoyer" value="">-->
+
                             <span  id="alerte"></span>
+
                         </form>
+
                     </main>
                 </div>
             </div>
@@ -47,6 +49,7 @@ session_start();
 
 <?php
 	session_unset();
+	include ('Controller/retrieve_url.php');
 	session_destroy();
 ?>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
