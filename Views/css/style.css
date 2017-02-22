@@ -19,6 +19,14 @@
   margin-bottom: 10px; }
 
 body {
-  background-image: url("../images/sky.svg"); }
+  background-image: url("../images/clouds.png");
+  width: 100%;
+  height: 770px;
+  background-repeat: repeat-x;
+  transition: linear;
+  transition-duration: 60s;
+  vertical-align: bottom;
+  padding-bottom: 0px;
+  overflow: hidden; }
 
 /*# sourceMappingURL=style.css.map */

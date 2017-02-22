@@ -52,5 +52,7 @@ session_start();
 ?>
         <script src="/view/js/main.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+		<script src="Views/js/background.js"></script>
+
     </body>
 </html>
