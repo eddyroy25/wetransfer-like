@@ -68,21 +68,19 @@ if ($erreur == false) {
     $urlins->execute(	[":url" => $target.$file,
         ":id_user" => $id_user]);
 }
-$mail = $_POST{"email_exp"};
+$mail = $_POST["email_exp"];
 $query = "SELECT id_user FROM login WHERE email = $mail";
 
 $query = "SELECT * FROM filesurl, login WHERE login.id_user = filesurl.id_user";
 $query=$dbh->query($query);
 $result=$query->fetchAll();
 
-if (¤result == false){
-    $headers('Location:../index.php');
+if ($result == false){
+    headers('Location:../index.php');
 
 }
 
-else ($result == true ){
-
-
-header('Location:controller/download.php')
+else {
+header('Location:download.php');
 };
 

@@ -49,7 +49,7 @@ session_start();
 
 <?php
 	session_unset();
-	include ('Controller/retrieve_url.php');
+
 	session_destroy();
 ?>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
