@@ -76,7 +76,7 @@ $query=$dbh->query($query);
 $result=$query->fetchAll();
 
 if ($result == false){
-    headers('Location:../index.php');
+    header('Location:../index.php');
 
 }
 
