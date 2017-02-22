@@ -1,11 +1,25 @@
 body {
+	background-color: #2bd3e7;
 	background-image: url("../images/clouds.png");
 	width: 100%;
-	height: 770px;
 	background-repeat: repeat-x;
 	transition: linear;
-	transition-duration: 60s;
+	transition-duration: 500s;
 	vertical-align: bottom;
 	padding-bottom: 0px;
 	overflow: hidden;
+}
+
+#clouds {
+	background-image: url("../images/clouds2.png");
+	width: 100%;
+	height: 800px;
+	background-repeat: repeat-x;
+	transition: linear;
+	transition-duration: 200s;
+	vertical-align: bottom;
+	padding-bottom: 0px;
+	overflow: hidden;
+	position: fixed;
+	z-index:5;
 }
