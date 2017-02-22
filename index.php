@@ -50,7 +50,7 @@ session_start();
 	session_unset();
 	session_destroy();
 ?>
-        <script src="/view/js/main.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+        <script src="Views/js/main.js"></script>
     </body>
 </html>
