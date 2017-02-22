@@ -45,7 +45,7 @@ if ($erreur == false) {
     $headers 		.= "Content-Transfer-Encoding: 7bit \r\n";
     $headers 		.= "MIME-Version: 1.0";
 
-    $target = "http://quangb.marmier.codeur.online/wetransfer-like/Downloads";
+    $target = "../Downloads/";
 
     $file_tmp = $_FILES["fichier"]['tmp_name'];
     $file = $_FILES["fichier"]['name'];
