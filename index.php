@@ -16,7 +16,7 @@ session_start();
     </head>
     <body>
         <header>
-            <img src="Views/images/ostrich.png" alt="">
+            <img class="logo" src="Views/images/ostrich.svg" alt="">
         </header>
         <div class="container">
             <div class="row">
