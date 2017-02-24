@@ -14,5 +14,5 @@
 			}
 			function cloudsmove2 () {
 			document.getElementById("clouds").style.backgroundPosition = "-10000px";
-			var intervalle2 = setTimeout(cloudsmove1, 1000);
+			var intervalle2 = setTimeout(cloudsmove, 1000);
 			}
