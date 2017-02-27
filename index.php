@@ -29,7 +29,7 @@ session_start();
         </header>
         <div class="container">
             <div class="row">
-                <div class="col-lg-offset-2 col-lg-6">
+                <div class="col-md-offset-2 col-md-6">
                     <main>
                         <form id="formulaire" enctype="multipart/form-data" class="form" action="Controller/script.php" method="post">
 
@@ -56,7 +56,6 @@ session_start();
 
                     </main>
                 </div>
-				<div class="row">
 					<div class="col-md-offset-2 col-md-6">
 						<form id="login" action="Controller/display.php" method="post" class="form">
 							<p class="login">Le téléchargement c'est par ici!</p>
@@ -66,7 +65,6 @@ session_start();
 							<span  id="login_err"> <?php echo $_SESSION["login_erreur"];?></span>
 							<button type="submit">Connexion</button>
 						</form>
-					</div>
 				</div>
             </div>
         </div>
