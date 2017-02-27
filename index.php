@@ -48,7 +48,7 @@ session_start();
                         </div>
 
 
-                            <button id="env" type="submit" name="env">Envoyer</button>
+                            <button id="env" type="submit" name="env" class="btn btn-info">Envoyer</button>
 
                             <span  id="alerte"></span>
 
@@ -63,7 +63,7 @@ session_start();
 							<input id="login_dest" type="text" name="login" value="" placeholder="Votre E-mail...">
                             </div>
 							<span  id="login_err"> <?php echo $_SESSION["login_erreur"];?></span>
-							<button type="submit">Connexion</button>
+							<button type="submit" class="btn btn-info">Connexion</button>
 						</form>
 				</div>
             </div>
