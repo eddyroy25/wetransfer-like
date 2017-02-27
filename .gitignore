@@ -2,6 +2,3 @@ PDO.php
 .ftpconfig
 .idea/
 vendor/*
-display.php
-script.php
-displayview.php

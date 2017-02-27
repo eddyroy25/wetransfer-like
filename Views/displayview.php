@@ -27,7 +27,7 @@ session_start();
         </header>
         <div class="container">
             <div class="row">
-                <div class="col-lg-offset-2 col-lg-6">
+                <div class="list col-lg-offset-2 col-lg-6">
                     <main>
                     <?php
 					include ("../Model/PDO.php");
