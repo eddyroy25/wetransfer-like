@@ -28,7 +28,8 @@ body {
   transition-duration: 500s;
   vertical-align: bottom;
   padding-bottom: 0px;
-  overflow: hidden; }
+  overflow: hidden;
+  font-family: "Indie Flower"; }
 
 #clouds {
   background-image: url("../images/clouds2.png");
@@ -51,6 +52,10 @@ h1 {
       font-weight: bold;
       font-size: 60px;
   }
+
+  h1::first-letter {
+    text-transform: uppercase;
+}
 
 
 /*# sourceMappingURL=style.css.map */
