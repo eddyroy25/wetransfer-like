@@ -31,9 +31,9 @@ $dir = $result
     <div>
         <div>
 		
-        <a class='down' download="<?php echo $_SESSION['filename'] ?>" href="<?php echo $_SESSION['download']?>"><?php echo $_SESSION['filename']?></a>
+        <p> Bravo ! Votre fichier <?php echo $_SESSION['filename']?> a bien été uploadé. Un mail a été envoyé à <?php echo $_SESSION['dest']?>.</p>
 		
-			
+		<a href="../index.php">Retour à l'accueil</a>	
         </div>
     </div>
 </div>

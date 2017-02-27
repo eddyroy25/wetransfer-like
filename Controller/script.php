@@ -74,6 +74,7 @@ if ($erreur == false) {
 	$_SESSION['download'] = $download_directory;
 	$_SESSION['file'] = $download_file;
 	$_SESSION['filename'] = $file;
+	$_SESSION ['dest'] = $dest;
 	$dest = $_POST['mail_dest'];
     $objet        	= "Fichier à télécharger sur Ostifly !";
     $contenu      	= "Mail de l'expéditeur l'expéditeur : " .$_POST['mail_exp']. "\r\n";
@@ -94,11 +95,11 @@ $query=$dbh->query($query);
 $result=$query->fetchAll();
 
 if ($result == false){
-    // header('Location:../index.php');
+    header('Location:../index.php');
 
 }
 
 else {
-// header('Location:download.php');
+header('Location:download.php');
 };
 
