@@ -4,7 +4,7 @@
   margin-left: 100px;
   border: 2px solid red;
   border-radius: 12px;
-  background-color: rgba(255, 255, 255, 0.54); }
+  background-color: rgba(255, 255, 255, 0.5); }
 
 #fichier {
   margin: 10px; }
@@ -45,17 +45,18 @@ body {
   z-index: 5; }
 
 header {
-  background-color: rgba(255, 255, 255, 0.5); }
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 110px; }
 
 h1 {
-      font-family: "Indie Flower";
-      font-weight: bold;
-      font-size: 60px;
-  }
+  font-family: "Indie Flower";
+  font-weight: bold;
+  font-size: 60px; }
 
-  h1::first-letter {
-    text-transform: uppercase;
-}
+h1::first-letter {
+  text-transform: uppercase; }
 
+header img {
+  margin-top: 15px; }
 
 /*# sourceMappingURL=style.css.map */
