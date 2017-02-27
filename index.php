@@ -17,11 +17,11 @@ session_start();
         <header>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-5">
-            <img class="logo" src="Views/images/ostrich.svg" alt="">
+                    <div class="col-md-2">
+            <a href="index.php"><img class="logo" src="Views/images/ostrich.svg" alt=""></a>
                     </div>
                     <div class="col-md-7">
-            <h1>ostifly</h1>
+            <h1 class="text-center">ostifly</h1>
                     </div>
 
                 </div>
