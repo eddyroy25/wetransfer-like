@@ -62,14 +62,18 @@ body {
   background-color: rgba(255, 255, 255, 0.5);
   width: 500px;
   margin-left: 300px;
-  font-size: 25px; }
+  font-size: 25px;
+  border: 2px solid;
+  border-radius: 12px; }
 
 .list {
   margin-top: 150px;
   background-color: rgba(255, 255, 255, 0.5);
   width: 530px;
   margin-left: 90px;
-  font-size: 25px; }
+  font-size: 25px;
+  border: 2px solid;
+  border-radius: 12px; }
 
 header {
   background-color: rgba(255, 255, 255, 0.5);
