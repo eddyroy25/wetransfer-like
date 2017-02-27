@@ -7,20 +7,20 @@ $erreur = false;
 
 if ( (isset($_POST["login"])) && (strlen(trim($_POST["login"])) > 0) && (filter_var($_POST["login"], FILTER_VALIDATE_EMAIL)) ) {
     $destinataire = stripslashes(strip_tags($_POST["login"]));
-} 
+}
 else if (empty($_POST["login"])) {
     $_SESSION['login_erreur'] = "Merci d'écrire une adresse email";
     $erreur = true;
-} 
+}
 else {
     $_SESSION['login_erreur'] = "Email invalide";
     $erreur = true;
 }
 
 if ($erreur == false) {
-	
+
 		include ("../Model/PDO.php");
-		
+
 		$mail_dest = $_POST["login"];
 		$_SESSION['dest'] = $mail_dest;
 		$target = "../Downloads/";
@@ -30,8 +30,8 @@ if ($erreur == false) {
 
 					foreach ($filetab as $item) {
 						print $item["url"];
-					
-		$download_directory = "http://eddyr.marmier.codeur.online/Ostifly/wetransfer-like/Downloads/".$item["url"];
+
+		$download_directory = "http://quangb.marmier.codeur.online/wetransfer-like/Downloads/".$item["url"];
 		$download_file = $target.$item["url"];
 		$file = $item["url"];
 					}
@@ -40,8 +40,5 @@ if ($erreur == false) {
 		$_SESSION['filename'] = $file;
 
 	header ('Location: ../Views/displayview.php');
-	
+
 }
-	
-	
-	

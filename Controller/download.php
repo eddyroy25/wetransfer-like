@@ -37,9 +37,9 @@ session_start();
 echo ( "$result");
 $dir = $result
 ?>
-<div class="">
-    <div>
-        <div>
+<div class="container">
+    <div class="row">
+        <div class="success text-center">
 
         <p> Bravo ! Votre fichier <?php echo $_SESSION['filename']?> a bien été uploadé. Un mail a été envoyé à <?php echo $_SESSION['dest']?>.</p>
 
