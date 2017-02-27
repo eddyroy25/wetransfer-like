@@ -2,7 +2,7 @@
   display: block;
   margin-top: 100px;
   margin-left: 100px;
-  border: 2px solid red;
+  border: 2px solid;
   border-radius: 12px;
   background-color: rgba(255, 255, 255, 0.5); }
 
@@ -44,6 +44,13 @@ body {
   position: fixed;
   z-index: 5; }
 
+#login {
+  height: 100px; }
+
+.login {
+  margin-top: 10px;
+  margin-left: 10px;  }
+
 header {
   background-color: rgba(255, 255, 255, 0.5);
   height: 110px; }
@@ -57,6 +64,6 @@ h1::first-letter {
   text-transform: uppercase; }
 
 header img {
-  margin-top: 15px; }
+  margin-top: 15px;}
 
 /*# sourceMappingURL=style.css.map */
