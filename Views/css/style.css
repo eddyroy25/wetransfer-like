@@ -11,17 +11,23 @@
   margin-left: 10px; }
 
 #fichier {
-  margin: 10px; }
+  margin: 10px;
+  border-radius: 5px; }
 
 #mail_dest {
-  margin: 15px; }
+  margin: 15px;
+  border-radius: 5px; }
 
 #mail_exp {
-  margin: 15px; }
+  margin: 15px;
+  border-radius: 5px; }
 
 #env {
   margin-left: 170px;
   margin-bottom: 10px; }
+
+#login_dest {
+  border-radius: 5px; }
 
 body {
   background-color: #2bd3e7;
@@ -51,9 +57,19 @@ body {
 #login {
   height: 100px; }
 
-.login {
-  margin-top: 10px;
-  margin-left: 10px; }
+.success {
+  margin-top: 150px;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 500px;
+  margin-left: 300px;
+  font-size: 25px; }
+
+.list {
+  margin-top: 150px;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 500px;
+  margin-left: 300px;
+  font-size: 25px; }
 
 header {
   background-color: rgba(255, 255, 255, 0.5);

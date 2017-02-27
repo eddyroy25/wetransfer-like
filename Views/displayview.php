@@ -29,6 +29,9 @@ session_start();
             <div class="row">
                 <div class="col-lg-offset-2 col-lg-6">
                     <main>
+                        <div class="list">
+
+                        <p class="sentence">Les fichiers que vous pouvez télécharger sont ici : </p>
                     <?php
 					include ("../Model/PDO.php");
 
@@ -45,6 +48,7 @@ session_start();
 					}
 
 					?>
+                    </div>
                     </main>
                 </div>
             </div>

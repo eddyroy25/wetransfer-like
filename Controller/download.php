@@ -20,20 +20,30 @@ session_start();
     <title>we transfer like</title>
 </head>
 <body>
-<header>
-    <img src="../Views/images/ostrich.svg" alt="">
-</header>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+        <a href="index.php"><img class="logo" src="../Views/images/ostrich.svg" alt=""></a>
+                </div>
+                <div class="col-md-7">
+        <h1 class="text-center">ostifly</h1>
+                </div>
+
+            </div>
+        </div>
+    </header>
 <?php
 echo ( "$result");
 $dir = $result
 ?>
-<div class="">
-    <div>
-        <div>
-		
+<div class="container">
+    <div class="row">
+        <div class="success text-center">
+
         <p> Bravo ! Votre fichier <?php echo $_SESSION['filename']?> a bien été uploadé. Un mail a été envoyé à <?php echo $_SESSION['dest']?>.</p>
-		
-		<a href="../index.php">Retour à l'accueil</a>	
+
+		<a href="../index.php">Retour à l'accueil</a>
         </div>
     </div>
 </div>
