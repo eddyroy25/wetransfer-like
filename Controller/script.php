@@ -36,14 +36,8 @@ if ( (isset($_POST["mail_exp"])) && (strlen(trim($_POST["mail_exp"])) > 0) && (f
 }
 
 if ($erreur == false) {
-    $dest = $_POST['mail_dest'];
-    $objet        	= "Fichier à télécharger sur Ostifly !";
-    $contenu      	= "Mail de l'expéditeur l'expéditeur : " .$_POST['mail_exp']. "\r\n";
-    $contenu     	= "Bonjour ! \r\n Vous avez reçu une invition de la part de ".$_POST['mail_exp']." pour télécharger un fichier. Nous vous invitons à cliquer sur le lien suivant pour le télécharger : lien . Bonne journée et à bientôt ! L'équipe d'Ostifly.\r\n\n";
-    $headers 		= "Content-Type: text/plain; charset=\"utf-8\"; DelSp=\"Yes\"; format=flowed /r/n";
-    $headers 		.= "Content-Disposition: inline \r\n";
-    $headers 		.= "Content-Transfer-Encoding: 7bit \r\n";
-    $headers 		.= "MIME-Version: 1.0";
+	
+	include ("../Model/PDO.php");
 
     $target = "../Downloads/";
 
@@ -53,22 +47,46 @@ if ($erreur == false) {
     var_dump($extension);
     $files = $file.".".$extension;
     move_uploaded_file($file_tmp, $target.$file);
-    mail($dest, $objet, utf8_decode($contenu), $headers);
 
-    include ("../Model/PDO.php");
     $exp = $_POST['mail_exp'];
-
-    $loginins = $dbh->prepare("INSERT INTO login (email) VALUES (:mail)");
-    $loginins->execute([":mail" =>$exp]);
-
-    $id_select = $dbh->prepare("SELECT :id_user FROM login");
+	$dest = $_POST['mail_dest'];
+    $loginins = $dbh->prepare("INSERT INTO login (email, email_destinataire) VALUES (:mail, :maild)");
+    $loginins->execute(	[	":mail" =>$exp,
+							":maild" =>$dest ]);
+							
+	// $dest_select = $dbh->prepare("SELECT :email_destinataire FROM login");
+	// $dest_user = $dbh->lastInsertId();
+	// $dest_exe = $dest_select->execute(	[":email_destinataire" => $dest]);_
+	// $dest_files = $dbh->prepare("INSERT INTO filesurl (email_destinataire) VALUES (:mail, :maild)");
+	
+    $id_select = $dbh->prepare("SELECT :id_user, :email_destinataire FROM login");
     $id_user = $dbh->lastInsertId();
-    $id_exe = $id_select->execute( [":id_user" => $id_user]);
-    $urlins = $dbh->prepare("INSERT INTO filesurl (url, id_user) VALUES (:url, :id_user)");
-    $urlins->execute(	[":url" => $target.$file,
-        ":id_user" => $id_user]);
+    $id_exe = $id_select->execute( [":id_user" => $id_user,
+									":email_destinataire" => $dest]);
+    $urlins = $dbh->prepare("INSERT INTO filesurl (url, id_user, emaildestinataire) VALUES (:url, :id_user, :email_destinataire)");
+    $urlins->execute(	[":url" => $file,
+						":id_user" => $id_user,
+						":email_destinataire" => $dest]);
+	
+	$download_file = $target.$file;
+	$download_page = "http://eddyr.marmier.codeur.online/Ostifly/wetransfer-like/Controller/download.php";
+	$download_directory = "http://eddyr.marmier.codeur.online/Ostifly/wetransfer-like/Downloads/".$file;
+	$_SESSION['download'] = $download_directory;
+	$_SESSION['file'] = $download_file;
+	$_SESSION['filename'] = $file;
+	$dest = $_POST['mail_dest'];
+    $objet        	= "Fichier à télécharger sur Ostifly !";
+    $contenu      	= "Mail de l'expéditeur l'expéditeur : " .$_POST['mail_exp']. "\r\n";
+    $contenu     	= "Bonjour ! \r\n Vous avez reçu une invition de la part de ".$_POST['mail_exp']." pour télécharger un fichier. Nous vous invitons à cliquer sur le lien suivant pour le télécharger : ".$download_page.". Bonne journée et à bientôt ! L'équipe d'Ostifly.\r\n\n";
+    $headers 		= "Content-Type: text/plain; charset=\"utf-8\"; DelSp=\"Yes\"; format=flowed /r/n";
+    $headers 		.= "Content-Disposition: inline \r\n";
+    $headers 		.= "Content-Transfer-Encoding: 7bit \r\n";
+    $headers 		.= "MIME-Version: 1.0";
+    mail($dest, $objet, utf8_decode($contenu), $headers);
+	
+	
 }
-$mail = $_POST["email_exp"];
+$mail = $_POST["mail_exp"];
 $query = "SELECT id_user FROM login WHERE email = $mail";
 
 $query = "SELECT * FROM filesurl, login WHERE login.id_user = filesurl.id_user";
@@ -76,11 +94,11 @@ $query=$dbh->query($query);
 $result=$query->fetchAll();
 
 if ($result == false){
-    header('Location:../index.php');
+    // header('Location:../index.php');
 
 }
 
 else {
-header('Location:download.php');
+// header('Location:download.php');
 };
 

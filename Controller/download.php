@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "../Model/PDO.php"
 ?>
 
@@ -29,17 +30,14 @@ $dir = $result
 <div class="">
     <div>
         <div>
-            <a class="down" download='<?=$dir?>' href= http://quangb.marmier.codeur.online/wetransfer-like/Downloads<?=$_GET["dossier"]?><?=$dir?>>Télécharger<?=$dir;?></a>
+		
+        <a class='down' download="<?php echo $_SESSION['filename'] ?>" href="<?php echo $_SESSION['download']?>"><?php echo $_SESSION['filename']?></a>
+		
+			
         </div>
     </div>
 </div>
 
-
-
-<?php
-session_unset();
-session_destroy();
-?>
 <script src="/view/js/main.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
 </body>

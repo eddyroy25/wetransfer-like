@@ -40,6 +40,16 @@ session_start();
 
                     </main>
                 </div>
+				<div class="row">
+					<div class="col-lg-offset-2 col-lg-6">
+						<form id="login" action="Controller/display.php" method="post" class="form">
+							<p>Le téléchargement c'est par ici!</p>
+							<input id="login_dest" type="text" name="login" value="" placeholder="Votre E-mail...">
+							<span  id="login_err"> <?php echo $_SESSION["login_erreur"];?></span>
+							<button type="submit">Connexion</button>
+						</form>
+					</div>
+				</div>
             </div>
         </div>
 		<div id="clouds">
