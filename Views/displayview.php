@@ -13,15 +13,25 @@ session_start();
     </head>
     <body>
         <header>
-            <img class="logo" src="Views/images/ostrich.svg" alt="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2">
+            <a href="../index.php"><img class="logo" src="images/ostrich.svg" alt=""></a>
+                    </div>
+                    <div class="col-md-7">
+            <h1 class="text-center">ostifly</h1>
+                    </div>
+
+                </div>
+            </div>
         </header>
         <div class="container">
             <div class="row">
                 <div class="col-lg-offset-2 col-lg-6">
                     <main>
-                    <?php  
+                    <?php
 					include ("../Model/PDO.php");
-					
+
 					$filedisp = $dbh->prepare("SELECT url FROM filesurl WHERE emaildestinataire = :email");
 					$filedisp->execute([":email" => $_SESSION['dest']]);
 					$filetab = $filedisp->fetchAll();
@@ -29,11 +39,11 @@ session_start();
 					$item = $_SESSION['filename'];
 
 					foreach ($filetab as $item) {
-					
-					print "<p><a class='down' download=".$item['url']." href='http://eddyr.marmier.codeur.online/Ostifly/wetransfer-like/Downloads/".$item['url']."'>".$item['url']."</a></p><br>";
-					
+
+					print "<p><a class='down' download=".$item['url']." href='http://quangb.marmier.codeur.online/Ostifly/wetransfer-like/Downloads/".$item['url']."'>".$item['url']."</a></p><br>";
+
 					}
-					
+
 					?>
                     </main>
                 </div>

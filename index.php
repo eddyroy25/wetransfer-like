@@ -17,11 +17,11 @@ session_start();
         <header>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-5">
-            <img class="logo" src="Views/images/ostrich.svg" alt="">
+                    <div class="col-md-2">
+            <a href="index.php"><img class="logo" src="Views/images/ostrich.svg" alt=""></a>
                     </div>
                     <div class="col-md-7">
-            <h1>ostifly</h1>
+            <h1 class="text-center">ostifly</h1>
                     </div>
 
                 </div>
@@ -38,11 +38,15 @@ session_start();
                             <input id="fichier" type="file" name="fichier" value="">
                             <span  id="fichier_err"> <?php echo $_SESSION["fichier_erreur"];?></span>
 
+                            <div class="col-md-6">
                             <input id="mail_dest" type="email" name="mail_dest" value="" placeholder="Email destinataire">
                             <span  id="mail_dest_err"> <?php echo $_SESSION["mail_dest_erreur"];?></span>
-
+                            </div>
+                            <div class="col-md-6">
                             <input id="mail_exp" type="email" name="mail_exp" value="" placeholder="Mon Email">
                             <span  id="mail_exp_err"> <?php echo $_SESSION["mail_exp_erreur"];?></span>
+                        </div>
+
 
                             <button id="env" type="submit" name="env">Envoyer</button>
 
@@ -53,10 +57,12 @@ session_start();
                     </main>
                 </div>
 				<div class="row">
-					<div class="col-lg-offset-2 col-lg-6">
+					<div class="col-md-offset-2 col-md-6">
 						<form id="login" action="Controller/display.php" method="post" class="form">
-							<p>Le téléchargement c'est par ici!</p>
+							<p class="login">Le téléchargement c'est par ici!</p>
+                            <div class="col-md-offset-2 col-md-6">
 							<input id="login_dest" type="text" name="login" value="" placeholder="Votre E-mail...">
+                            </div>
 							<span  id="login_err"> <?php echo $_SESSION["login_erreur"];?></span>
 							<button type="submit">Connexion</button>
 						</form>

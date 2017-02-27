@@ -1,10 +1,14 @@
 .form {
   display: block;
-  margin-top: 100px;
+  margin-top: 160px;
   margin-left: 100px;
-  border: 2px solid red;
+  border: 2px solid;
   border-radius: 12px;
   background-color: rgba(255, 255, 255, 0.5); }
+
+.login {
+  margin-top: 10px;
+  margin-left: 10px; }
 
 #fichier {
   margin: 10px; }
@@ -43,6 +47,13 @@ body {
   overflow: hidden;
   position: fixed;
   z-index: 5; }
+
+#login {
+  height: 100px; }
+
+.login {
+  margin-top: 10px;
+  margin-left: 10px; }
 
 header {
   background-color: rgba(255, 255, 255, 0.5);
