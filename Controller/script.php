@@ -53,12 +53,7 @@ if ($erreur == false) {
     $loginins = $dbh->prepare("INSERT INTO login (email, email_destinataire) VALUES (:mail, :maild)");
     $loginins->execute(	[	":mail" =>$exp,
 							":maild" =>$dest ]);
-							
-	// $dest_select = $dbh->prepare("SELECT :email_destinataire FROM login");
-	// $dest_user = $dbh->lastInsertId();
-	// $dest_exe = $dest_select->execute(	[":email_destinataire" => $dest]);_
-	// $dest_files = $dbh->prepare("INSERT INTO filesurl (email_destinataire) VALUES (:mail, :maild)");
-	
+								
     $id_select = $dbh->prepare("SELECT :id_user, :email_destinataire FROM login");
     $id_user = $dbh->lastInsertId();
     $id_exe = $id_select->execute( [":id_user" => $id_user,
@@ -69,7 +64,7 @@ if ($erreur == false) {
 						":email_destinataire" => $dest]);
 	
 	$download_file = $target.$file;
-	$download_page = "http://eddyr.marmier.codeur.online/Ostifly/wetransfer-like/Controller/download.php";
+	$download_page = "http://eddyr.marmier.codeur.online/Ostifly/wetransfer-like/index.php";
 	$download_directory = "http://eddyr.marmier.codeur.online/Ostifly/wetransfer-like/Downloads/".$file;
 	$_SESSION['download'] = $download_directory;
 	$_SESSION['file'] = $download_file;
@@ -78,9 +73,10 @@ if ($erreur == false) {
 	$dest = $_POST['mail_dest'];
     $objet        	= "Fichier à télécharger sur Ostifly !";
     $contenu      	= "Mail de l'expéditeur l'expéditeur : " .$_POST['mail_exp']. "\r\n";
-    $contenu     	= "Bonjour ! \r\n Vous avez reçu une invition de la part de ".$_POST['mail_exp']." pour télécharger un fichier. Nous vous invitons à cliquer sur le lien suivant pour le télécharger : ".$download_page.". Bonne journée et à bientôt ! L'équipe d'Ostifly.\r\n\n";
+    $contenu     	= "Bonjour ! \r\n Vous avez reçu une invition de la part de ".$_POST['mail_exp']." pour télécharger un fichier. Nous vous invitons à vous connecter sur Ostifly pour le télécharger : ".$download_page.". Bonne journée et à bientôt ! L'équipe d'Ostifly.\r\n\n";
     $headers 		= "Content-Type: text/plain; charset=\"utf-8\"; DelSp=\"Yes\"; format=flowed /r/n";
-    $headers 		.= "Content-Disposition: inline \r\n";
+    $headers 		= "From: Ostifly \r\n";
+	$headers 		.= "Content-Disposition: inline \r\n";
     $headers 		.= "Content-Transfer-Encoding: 7bit \r\n";
     $headers 		.= "MIME-Version: 1.0";
     mail($dest, $objet, utf8_decode($contenu), $headers);
@@ -95,11 +91,13 @@ $query=$dbh->query($query);
 $result=$query->fetchAll();
 
 if ($result == false){
+	
     header('Location:../index.php');
 
 }
 
 else {
-header('Location:download.php');
-};
-
+	
+	header('Location:download.php');
+	
+}
