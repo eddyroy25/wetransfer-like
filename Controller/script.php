@@ -36,7 +36,7 @@ if ( (isset($_POST["mail_exp"])) && (strlen(trim($_POST["mail_exp"])) > 0) && (f
 }
 
 if ($erreur == false) {
-	
+
 	include ("../Model/PDO.php");
 
     $target = "../Downloads/";
@@ -53,7 +53,7 @@ if ($erreur == false) {
     $loginins = $dbh->prepare("INSERT INTO login (email, email_destinataire) VALUES (:mail, :maild)");
     $loginins->execute(	[	":mail" =>$exp,
 							":maild" =>$dest ]);
-								
+
     $id_select = $dbh->prepare("SELECT :id_user, :email_destinataire FROM login");
     $id_user = $dbh->lastInsertId();
     $id_exe = $id_select->execute( [":id_user" => $id_user,
@@ -62,10 +62,10 @@ if ($erreur == false) {
     $urlins->execute(	[":url" => $file,
 						":id_user" => $id_user,
 						":email_destinataire" => $dest]);
-	
+
 	$download_file = $target.$file;
-	$download_page = "http://eddyr.marmier.codeur.online/Ostifly/wetransfer-like/index.php";
-	$download_directory = "http://eddyr.marmier.codeur.online/Ostifly/wetransfer-like/Downloads/".$file;
+	$download_page = "http://quangb.marmier.codeur.online/wetransfer-like/Downloads/";
+	$download_directory = "http://quangb.marmier.codeur.online/wetransfer-like/Downloads/".$file;
 	$_SESSION['download'] = $download_directory;
 	$_SESSION['file'] = $download_file;
 	$_SESSION['filename'] = $file;
@@ -80,8 +80,8 @@ if ($erreur == false) {
     $headers 		.= "Content-Transfer-Encoding: 7bit \r\n";
     $headers 		.= "MIME-Version: 1.0";
     mail($dest, $objet, utf8_decode($contenu), $headers);
-	
-	
+
+
 }
 $mail = $_POST["mail_exp"];
 $query = "SELECT id_user FROM login WHERE email = $mail";
@@ -91,13 +91,13 @@ $query=$dbh->query($query);
 $result=$query->fetchAll();
 
 if ($result == false){
-	
+
     header('Location:../index.php');
 
 }
 
 else {
-	
+
 	header('Location:download.php');
-	
+
 }

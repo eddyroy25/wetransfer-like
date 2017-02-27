@@ -43,7 +43,7 @@ session_start();
 
 					foreach ($filetab as $item) {
 
-					print "<p><a class='down' download=".$item['url']." href='http://quangb.marmier.codeur.online/Ostifly/wetransfer-like/Downloads/".$item['url']."'>".$item['url']."</a></p><br>";
+					print "<p><a class='down' download=".$item['url']." href='http://quangb.marmier.codeur.online/wetransfer-like/Downloads/".$item['url']."'>".$item['url']."</a></p><br>";
 
 					}
 
