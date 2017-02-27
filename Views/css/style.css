@@ -3,7 +3,8 @@
   margin-top: 100px;
   margin-left: 100px;
   border: 2px solid red;
-  border-radius: 12px; }
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.5); }
 
 #fichier {
   margin: 10px; }
@@ -27,7 +28,8 @@ body {
   transition-duration: 500s;
   vertical-align: bottom;
   padding-bottom: 0px;
-  overflow: hidden; }
+  overflow: hidden;
+  font-family: "Indie Flower"; }
 
 #clouds {
   background-image: url("../images/clouds2.png");
@@ -41,5 +43,20 @@ body {
   overflow: hidden;
   position: fixed;
   z-index: 5; }
+
+header {
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 110px; }
+
+h1 {
+  font-family: "Indie Flower";
+  font-weight: bold;
+  font-size: 60px; }
+
+h1::first-letter {
+  text-transform: uppercase; }
+
+header img {
+  margin-top: 15px; }
 
 /*# sourceMappingURL=style.css.map */

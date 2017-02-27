@@ -6,6 +6,8 @@ session_start();
 <html>
     <head>
         <meta charset="utf-8">
+
+        <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="Views/css/style.css">
 
@@ -13,7 +15,17 @@ session_start();
     </head>
     <body>
         <header>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5">
             <img class="logo" src="Views/images/ostrich.svg" alt="">
+                    </div>
+                    <div class="col-md-7">
+            <h1>ostifly</h1>
+                    </div>
+
+                </div>
+            </div>
         </header>
         <div class="container">
             <div class="row">
